@@ -1,13 +1,16 @@
 .page-header {
-    background-color: #ff9400;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    background-color: #ff9400;/*배경 색*/
+    margin-top: 0; /*외부의 여백*/
+    padding: 20px 20px 20px 40px;/*내부의 여백*/
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+/*activate a태그가 걸린 글자를 클릭 도중 스타일 변화
+visited 방문한 링크에 대한 스타일의 변화*/
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    /*밑줄 링크인 text-decoration*/
 }
 
 .content {
@@ -20,6 +23,7 @@ h1, h2, h3, h4 {
 
 .date {
     float: right;
+    /*float는 좌우를 지정하는 것이다.*/
     color: #828282;
 }
 
@@ -32,6 +36,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
+    /*hover는 마우스를 올렸을 때*/
     color: #ffffff;
     float: right;
     font-size: 26pt;

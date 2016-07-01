@@ -2,12 +2,13 @@
 
 {% block content %}
     {% for post in posts %}
+    <!--포스트에 있는 모든 목록-->
         <div class="post">
             <div class="date">
                 {{ post.published_date }}
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaks }}</p>
+            <p>{{ post.text|linebreaks }}</p><!--행이 바뀌면 문단으로 변환하도록 하라-->
         </div>
     {% endfor %}
 {% endblock content %}

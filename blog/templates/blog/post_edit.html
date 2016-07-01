@@ -4,6 +4,8 @@
     <h1>New post</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
+        <!--타이틀과 바,텍스트와 바-->
         <button type="submit" class="save btn btn-default">Save</button>
+        <!--세이브 버튼-->
     </form>
 {% endblock %}

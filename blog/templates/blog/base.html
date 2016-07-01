@@ -6,17 +6,39 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide();
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+        </script>
     </head>
     <body>
         <div class="page-header">
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            {% if user.is_authenticated %}
+            <!--증명이 된다면-->
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <!--우측 상단에 플러스 버튼-->
+            {% endif %}
+            <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+
+            <h1><a href="/">경제`s django Blog</a></h1>
         </div>
+        <p>If you click on the "Hide" button, I will disappear.</p>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}
                     {% endblock %}
+                    <!--다른 파일에서 상속할때 사용-->
                 </div>
             </div>
         </div>
